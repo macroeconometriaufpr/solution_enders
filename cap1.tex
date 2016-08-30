@@ -1,0 +1,282 @@
+\chapter{Equações em diferença}
+
+\begin{enumerate}
+	\item a) Encontrando a solução de Jill:
+	\begin{align*}
+		y_t&=a_0+a_1y_{t-1}\\
+		&= a_0+a_1(a_0+a_1y_{t-2})\\
+		&=a_0+a_0a_1+a_0a_1^2+\cdots+a_0a_1^{t-1}+a_1^ty_0\\
+		&= a_0\sum_{i=0}^{t-1}a_1^{i}+a_1^ty_0.
+	\end{align*}
+	O primeiro termo da soma é uma progressão geométrica finita, então
+	
+	\begin{equation*}
+		a_0\sum_{i=0}^{t-1}a_1^i=a_0\frac{(1-a_1^{t})}{(1-a_1)}=\frac{a_0}{(1-a_1)}-\frac{a_0a_1^{t}}{(1-a_1)}.
+	\end{equation*}
+	 Substituindo a P.G. finita na solução de Jill, temos
+	
+	\begin{align*}
+		y_t&=\frac{a_0}{(1-a_1)}-\frac{a_0a_1^{t}}{(1-a_1)}+a_1^ty_0\\
+		&=\frac{a_0}{(1-a_1)}-a_1^t\bigg[y_0-\frac{a_0}{(1-a_1)}\bigg].
+	\end{align*}
+	
+	Solução para Bill:
+		
+	A função complementar é dada pela solução homogênea de $y_t=a_0+a_1y_{t-1}$.
+	
+	\begin{align*}
+		y_t-a_1y_{t-1}&=0\\
+		\text{se}\;\;y_t=Ab^t,\;\;y_{t-1}&=a_1Ab^{t-1}\\
+		\text{então}\;\;Ab^t-a_1Ab^{t-1}&=0\\
+		Ab^t({1-a_1b^{-1}})&=0 \Rightarrow b=a_1\\
+	\end{align*}
+	Com isso a função complementar se torna $y_t^c=Aa_1^t$, 
+	
+	A solução particular pode ser $y_t^p=k$, então
+	
+	\begin{align*}
+	k&=a_0+a_1k\\
+	k&=\frac{a_0}{1-a_1}\Rightarrow y^p_t=\frac{a_0}{1-a_1}
+	\end{align*}
+	
+	então a solução geral é
+	
+	\begin{equation*}
+		y_t=y_t^p+y_t^c=\frac{a_0}{1-a_1}+Aa_1^t
+	\end{equation*}
+	
+	Para encontrarmos a solução definida usamos a condição inicial $y_0$ em $t=0$ na solução geral.
+	
+	\begin{align*}
+		y_0&=\frac{a_0}{1-a_1}+Aa_1^0\\
+		&= \frac{a_0}{1-a_1}+A \Rightarrow A=y_0-\frac{a_0}{1-a_1}
+	\end{align*}
+	Substituindo a constante arbitrária $A$ na solução geral, 
+	\begin{align*}
+		y_t=\frac{a_0}{1-a_1}+a_1^t\bigg[y_0-\frac{a_0}{1-a_1}\bigg],
+	\end{align*}
+	
+	assim temos a igualdade entre as soluções de Jill e Bill.
+	
+	b) Para Jill, se $a_1=1$, temos
+	
+	\begin{align*}
+	y_t&=a_0+y_{t-1}\\
+	&=a_0+a_0+y_{t-2}\\
+	&=a_0+a_0+\cdots+a_0+y_0\\
+	&=a_0t+y_0
+	\end{align*}
+	
+	Método de Bill:
+	
+	\begin{align*}
+		y_t^c=Ab^t \Rightarrow Ab^t&=Ab^{t-1}\\
+		b&=1\\
+		\Rightarrow y_t^c=A	&
+	\end{align*}
+	
+	\begin{align*}
+		y_t^p=kt \Rightarrow kt&=a_0+k(t-1)\\
+		\Rightarrow a_0&=k\\
+		\Rightarrow y_t^p=k+k(t-1)&=kt
+	\end{align*}
+	
+	\begin{align*}
+		y_t&=y_t^c+y_t^p=A+kt \;\text{(solução geral)}\\
+		\\
+	\text{em}\;\; t=0,\; y_t&=y_0 \Rightarrow y_0=A,\; \text{então}\\
+	y_t&=y_0+kt\\
+	\\
+	\text{para}\; t=1,\; y_1&=a_0+y_0\Rightarrow y_0=y_1-a_0\\
+	\text{substituindo em}\; y_t&=y_0+kt\; \text{avaliada em} \;t=1\\
+	y_1&=y_1-a_0+k \Rightarrow k=a_0\\
+	y_t&=a_0t+y_0 \;\text{(solução definida)}
+	\end{align*}
+	
+	------------------------------------
+	
+	\item a) solução homogênea
+	
+	\begin{align*}
+		p^*_t-(1-\alpha)p^*_{t-1}&=0\\
+		 p^*_t&=Ab^t\Rightarrow Ab^t=(1-\alpha)Ab^{t-1}\\
+		\Rightarrow b&=(1-\alpha)\; \;\text{e}\;\; p_t^*=A(1-\alpha)^t
+	\end{align*}
+	
+	b) solução particular
+	
+	 \begin{align*}
+		p_t^*&=\alpha Lp_t +(1-\alpha)Lp_t^*\\
+		p_t^*&=\frac{\alpha Lp_t}{1-(1-\alpha)L}\equiv \alpha p_t \sum \limits_{i=0}^{\infty}(1-\alpha)^iL^{i+1}
+		\end{align*}
+		
+		Somando a solução homogênea e particular
+		
+		\begin{align*}
+			p^*_t=A(1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{\infty}(1-\alpha)^iL^{i+1}
+		\end{align*}
+		
+		No período $t=0$, $p_t^*=p_0^*$, então
+		
+		\begin{align*}
+			p_0^*=A+\alpha p_0 \sum \limits_{i=0}^{\infty}(1-\alpha)^iL^{i+1}\\
+			A=p_0^*-\alpha p_0\sum \limits_{i=0}^{\infty}(1-\alpha)^iL^{i+1}
+		\end{align*}
+		
+		No período inicial $p_0^*=p_0$, então a solução definida fica
+		
+		\begin{align*}
+			p^*_t&=\Bigg[p_0-\alpha p_0\sum \limits_{i=0}^{\infty}(1-\alpha)^iL^{i+1}\Bigg](1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{\infty}(1-\alpha)^iL^{i+1}\\
+			p^*_t&=p_0(1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^iL^{i+1}\\
+		\end{align*}
+	
+	Substituindo na equação em diferença original:
+	
+	Antes temos,
+	
+\begin{align*}
+		p^*_{t-1}&=p_0(1-\alpha)^{t-1}+ \alpha p_{t} \sum \limits_{i=0}^{t-1}(1-\alpha)^{i}L^{i+2}
+	\end{align*}
+	Então
+	\begin{align*}
+		p_0(1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^iL^{i+1}&=\alpha p_{t-1}+(1-\alpha)\bigg[p_0(1-\alpha)^{t-1}+ \alpha p_{t} \sum \limits_{i=0}^{t-1}(1-\alpha)^{i}L^{i+2}\bigg]\\
+		&=\alpha p_{t-1}+(1-\alpha)p_0(1-\alpha)^{t-1}+\alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^{i+1}L^{i+2}\\
+		\text{tratando apenas o primeiro e }&\text{o terceiro termo da expressão acima}\\
+		\Longleftrightarrow \alpha p_{t-1}+\alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^{i+1}L^{i+2}&=\alpha p_tL(1-\alpha)^0+\alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^{i+1}L^{i+2}\\
+		&\equiv \alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^{i}L^{i+1}\\
+		\Rightarrow p_0(1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^iL^{i+1}&=	p_0(1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^iL^{i+1}
+	\end{align*}
+	Com isso os dois lados se tornam iguais, o que prova a veracidade da solução.
+	
+	------------------------------------
+	
+	\item a) 
+	
+	\begin{align*}
+		m_t&=m+\rho m_{t-1}+\varepsilon_t\\
+		\Rightarrow m_{t+1}&=m+\rho m_{t}+\varepsilon_{t+1}\\
+		 m_{t+2}&=m+\rho m_{t+1}+\varepsilon_{t+2}\\
+		 &\vdots\\
+		  m_{t+n}&=m+\rho m_{t+n-1}+\varepsilon_{t+n}
+	\end{align*}
+	substituindo recursivamente o termo defasado
+	\begin{align*}
+		m_{t+n}&=\rho m_{t+n-1}+\varepsilon_{t+n}\\
+		&=\rho(\rho m_{t+n-2}+\varepsilon_{t+n-1})+\varepsilon_{t+n}\\
+		&=\rho(\rho (\rho m_{t+n-3}+\varepsilon_{t+n-2})+\varepsilon_{t+n-1})+\varepsilon_{t+n}\\
+		&=\rho(\rho (\rho (\rho m_{t+n-4}+\varepsilon_{t+n-3})+\varepsilon_{t+n-2})+\varepsilon_{t+n-1})+\varepsilon_{t+n}\\
+		&\vdots\\
+		&=\rho^nm_t+\sum\limits_{i=0}^{n}\rho^{n-i}\varepsilon_{t+i}
+	\end{align*}
+	
+	b) 
+	\begin{align*}
+		E\bigg[m_{t+n}\bigg]&=E\bigg[\rho^nm_t+\sum\limits_{i=0}^{n}\rho^{n-i}\varepsilon_{t+i}\bigg]\\
+		&=E\bigg[\rho^nm_t\bigg]+E\bigg[\sum\limits_{i=0}^{n}\rho^{n-1}\varepsilon_{t+i}\bigg]\\
+		&=E\bigg[\rho^nm_t\bigg]+\sum\limits_{i=0}^{n}\rho^{n-i}E\bigg[\varepsilon_{t+i}\bigg]\\
+		E\bigg[m_{t+n}\bigg]&=\rho^nm_t
+	\end{align*}
+	
+	Como $m_{t+n}$ depende somente de uma variável conhecida $m_t$ e uma sequência de termos de erro $\{\varepsilon_1,\varepsilon_2,...\varepsilon_{t+n}\}$ de média zero, um modelo univariado pode ser útil para prever a oferta monetária $n$ períodos no futuro. Isto é possível estimando $\rho$ por meio de técnicas univariadas de séries temporais.
+	
+	------------------------------------
+	
+	\item 
+	a)
+	 
+	i.
+	
+	\begin{align*}
+		y_t-1.5y_{t-1}+0.5y_{t-2}&=0\\
+		y_t=Ab^t\Rightarrow y_{t-1}=Ab^{t-1}\text{ e }y_{t-2}&=Ab^{t-2}\\
+		\\
+		Ab^t-1.5Ab^{t-1}+0.5Ab^{t-2}=0\\
+		b^2-1.5b+0.5=0\\
+		\\
+		b_{1,2}=\frac{-a_1\pm \sqrt{a_1^2-4a_2}}{2},& \;\;\;a_1=-1.5,\;\;a_2=0.5\\
+		\Rightarrow b_1=\frac{1.5+\sqrt{(-1.5)^2-4 \times 0.5}}{2}&=1\\
+		b_2=\frac{1.5-\sqrt{(-1.5)^2-4 \times 0.5}}{2}&=0.5
+	\end{align*}
+	
+	ii.
+	
+	\begin{align*}
+		y_t-y_{t-2}&=0\\
+	y_t=Ab^t\Rightarrow y_{t-2}&=Ab^{t-2}\\
+	\\
+	Ab^t-Ab^{t-2}=0, \Rightarrow b^2-1&=0,\\
+	b_1=1\text{ ou }b_2=-1\\
+	\end{align*}
+	
+	iii.
+	
+	\begin{align*}
+	y_t-2y_{t-1}+y_{t-2}&=0\\
+	\Rightarrow Ab^t-2Ab^{t-1}+Ab^{t-2}&=0\\
+	b^2-2b+1&=0\\
+	b&=1
+	\end{align*}
+	
+	iv.
+	
+	\begin{align*}
+		y_t-y_{t-1}-0.25y_{t-2}+0.25y_{t-3}&=0\\
+		\Rightarrow Ab^t-Ab^{t-1}-0.25Ab^{t-2}+0.25Ab^{t-3}&=0\\
+		[b^3-b^2-0.25b+0.25&=0]\times 4\\
+		(2b)^2b-(2b)^2-1b+1&=0\\
+		\equiv (b-1)(2b+1)(2b-1)&=0\\
+		\Rightarrow b_1=1,\;\;b_2=0.5\;\;b_3=-0.5
+	\end{align*}
+	
+	b)
+	
+	i. 
+	
+	\begin{align*}
+		y_t&=1.5y_{t-1}-0.5y_{t-2}+\varepsilon_t\\
+		\Rightarrow y_{t-1}&=1.5y_{t-2}-0.5y_{t-3}+\varepsilon_{t-1}\\
+		y_{t-2}&=1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2}\\
+		y_{t-3}&=1.5y_{t-4}-0.5y_{t-5}+\varepsilon_{t-3}\\
+		\\
+		y_t&=1.5(1.5y_{t-2}-0.5y_{t-3}+\varepsilon_{t-1})-0.5(1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2})+\varepsilon_t\\
+		&=1.5(1.5[1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2}]-0.5y_{t-3}+\varepsilon_{t-1})-0.5(1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2})+\varepsilon_t\\
+		&=1.5(1.5[1.5\{1.5y_{t-4}-0.5y_{t-5}+\varepsilon_{t-3}\}-0.5y_{t-4}+\varepsilon_{t-2}]-0.5y_{t-3}+\varepsilon_{t-1})\\
+		&\;\;\;-0.5(1.5\{1.5y_{t-4}-0.5y_{t-5}+\varepsilon_{t-3}\}-0.5y_{t-4}+\varepsilon_{t-2})+\varepsilon_t\\
+		\\
+		&=(1.5)^4y_{t-4}+(1.5)^{3}(-0.5)y_{t-5}+(1.5)^{3}\varepsilon_{t-3}+(1.5)^{2}(-0.5)y_{t-4}+(1.5)^2\varepsilon_{t-2}\\
+		&\;\;\;+(1.5)^{1}(-0.5)y_{t-3}+(1.5)^{1}\varepsilon_{t-1}+(-0.5)(1.5)^{2}y_{t-4}+(-0.5)^{2}(1.5)y_{t-5}\\
+		&\;\;\;+(-0.5)(1.5)^{1}\varepsilon_{t-3}+(-0.5)^{2}y_{t-4}+(-0.5)^{1}\varepsilon_{t-2}+\varepsilon_t\\
+		\\
+		y_t&=\sum \limits_{i=0}^{\infty}[(1.5)^i-2(-0.5)^{i-3}(1.5)^{i-2}+(-0.5)^{i-2}]y_{-i}+\sum \limits_{i=0}^{\infty}(-0.5)^i(1.5)^i\varepsilon_{t-i}
+	\end{align*}
+	Podemos ver que $\lim\limits_{i\rightarrow \infty}y_t=\infty$, portanto a solução retrospectiva não é convergente.
+	
+	
+	ii.
+	
+	\begin{align*}
+		y_t&=y_{t-2}+\varepsilon_t\\
+		\Rightarrow y_{t-2}&=y_{t-4}+\varepsilon_{t-2}\\
+		\\
+		y_t&=y_{t-4}+\varepsilon_{t-2}+\varepsilon_t\\
+		&=y_{t-6}+\varepsilon_{t-4}+\varepsilon_{t-2}+\varepsilon_t\\
+		&=y_{t-\infty}+\sum\limits_{\substack{j=0\\i=2j}}^{\infty}\varepsilon_{t-i}
+	\end{align*}
+	Podemos ver que $\lim\limits_{j\rightarrow \infty}y_t=\infty$, portanto a solução retrospectiva não é convergente.
+	
+	iii.
+	
+	\begin{align*}
+		y_t&=2y_{t-1}-y_+t-2+\varepsilon_t\\
+	\text{de i. podemos deduzir que}\\
+		y_t&=\sum \limits_{i=0}^{\infty}[(2)^i-2(-1)^{i-3}(2)^{i-2}+(-1)^{i-2}]y_{-i}+\sum \limits_{i=0}^{\infty}(-1)^i(2)^i\varepsilon_{t-i}
+	\end{align*}
+	Como $\lim\limits_{i\rightarrow \infty}y_t=\infty$, portanto a solução retrospectiva não é convergente.
+	
+	iv.
+	
+	\begin{align*}
+		y_t=y_{t-1}+0.25y_{t-2}-0.25y_{t-3}+\varepsilon_t
+	\end{align*}
+\end{enumerate}
+

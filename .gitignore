@@ -50,3 +50,8 @@ solution_enders.pdf
 *.log
 solution_enders.idx
 *.aux
+*.gz
+5biv.eps
+*.pdf
+5biii.eps
+*.eps

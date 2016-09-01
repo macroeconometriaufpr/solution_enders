@@ -16,9 +16,11 @@ sumario=tradicional
 ]{abntex2}
 
 
-\usepackage{C:/Users/Lucca/GoogleDrive/Latex/mystyle}
-%% Espaçamento simples
-\SingleSpacing
+
+\usepackage{C:/Users/Lucca/GoogleDrive/Latex/bookstyle}
+
+\renewcommand{\ABNTEXchapterfont}{\fontfamily{lmr}\fontseries{b}\selectfont}
+
 \chapterstyle{default}
 
 \title{Solution for Applied Econometric Time Series (Enders, 2014)}
@@ -34,6 +36,7 @@ sumario=tradicional
 \begin{document}
 	
 \maketitle
+\mainmatter
 
 \input{cap1}
 

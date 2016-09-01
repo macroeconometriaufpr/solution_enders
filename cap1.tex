@@ -1,7 +1,12 @@
 \chapter{Equações em diferença}
 
 \begin{enumerate}
-	\item a) Encontrando a solução de Jill:
+	\item	
+	\begin{enumerate}
+		\item 
+	 
+	
+	Encontrando a solução de Jill:
 	\begin{align*}
 		y_t&=a_0+a_1y_{t-1}\\
 		&= a_0+a_1(a_0+a_1y_{t-2})\\
@@ -58,7 +63,7 @@
 	
 	assim temos a igualdade entre as soluções de Jill e Bill.
 	
-	b) Para Jill, se $a_1=1$, temos
+\item Para Jill, se $a_1=1$, temos
 	
 	\begin{align*}
 	y_t&=a_0+y_{t-1}\\
@@ -92,10 +97,10 @@
 	y_1&=y_1-a_0+k \Rightarrow k=a_0\\
 	y_t&=a_0t+y_0 \;\text{(solução definida)}
 	\end{align*}
-	
+\end{enumerate}
 	------------------------------------
 	
-	\item a) solução homogênea
+	\item \begin{enumerate}\item solução homogênea
 	
 	\begin{align*}
 		p^*_t-(1-\alpha)p^*_{t-1}&=0\\
@@ -103,7 +108,7 @@
 		\Rightarrow b&=(1-\alpha)\; \;\text{e}\;\; p_t^*=A(1-\alpha)^t
 	\end{align*}
 	
-	b) solução particular
+	\item solução particular
 	
 	 \begin{align*}
 		p_t^*&=\alpha Lp_t +(1-\alpha)Lp_t^*\\
@@ -147,10 +152,10 @@
 		\Rightarrow p_0(1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^iL^{i+1}&=	p_0(1-\alpha)^t+ \alpha p_t \sum \limits_{i=0}^{t-1}(1-\alpha)^iL^{i+1}
 	\end{align*}
 	Com isso os dois lados se tornam iguais, o que prova a veracidade da solução.
-	
+\end{enumerate}
 	------------------------------------
 	
-	\item a) 
+	\item \begin{enumerate}\item 
 	
 	\begin{align*}
 		m_t&=m+\rho m_{t-1}+\varepsilon_t\\
@@ -161,30 +166,34 @@
 	\end{align*}
 	substituindo recursivamente o termo defasado
 	\begin{align*}
-		m_{t+n}&=\rho m_{t+n-1}+\varepsilon_{t+n}\\
-		&=\rho(\rho m_{t+n-2}+\varepsilon_{t+n-1})+\varepsilon_{t+n}\\
-		&=\rho(\rho (\rho m_{t+n-3}+\varepsilon_{t+n-2})+\varepsilon_{t+n-1})+\varepsilon_{t+n}\\
-		&=\rho(\rho (\rho (\rho m_{t+n-4}+\varepsilon_{t+n-3})+\varepsilon_{t+n-2})+\varepsilon_{t+n-1})+\varepsilon_{t+n}\\
+	m_{t+1}	&=m+\rho m_t+\varepsilon_{t+1}\\
+	m_{t+2}	&=m+\rho(m+\rho m_t+\varepsilon_{t+1})+\varepsilon_{t+2}=m+\rho m+\rho^2m_t+\rho \varepsilon_{t+1}+\varepsilon_{t+2}\\
+	m_{t+3}	&=m+\rho(m+\rho m+\rho^2m_t+\rho \varepsilon_{t+1}+\varepsilon_{t+2})+\varepsilon_{t+3}\\
+	&\equiv m+\rho m+\rho^2m+\rho^3m_t+\rho^2\varepsilon_{t+1}+\rho\varepsilon_{t+2}+\varepsilon_{t+3}\\
 		&\vdots\\
-		&=\rho^nm_t+\sum\limits_{i=0}^{n}\rho^{n-i}\varepsilon_{t+i}
+	m_{t+n}	&=\sum\limits_{j=0}^{n-1}\rho^jm+\rho^nm_t+\sum\limits_{i=0}^{n}\rho^{n-i}\varepsilon_{t+i}
 	\end{align*}
 	
-	b) 
+	\item 
 	\begin{align*}
-		E\bigg[m_{t+n}\bigg]&=E\bigg[\rho^nm_t+\sum\limits_{i=0}^{n}\rho^{n-i}\varepsilon_{t+i}\bigg]\\
-		&=E\bigg[\rho^nm_t\bigg]+E\bigg[\sum\limits_{i=0}^{n}\rho^{n-1}\varepsilon_{t+i}\bigg]\\
-		&=E\bigg[\rho^nm_t\bigg]+\sum\limits_{i=0}^{n}\rho^{n-i}E\bigg[\varepsilon_{t+i}\bigg]\\
-		E\bigg[m_{t+n}\bigg]&=\rho^nm_t
+		E\bigg[m_{t+n}\bigg]&=E\bigg[\sum\limits_{j=0}^{n-1}\rho^jm+\rho^nm_t+\sum\limits_{i=0}^{n}\rho^{n-i}\varepsilon_{t+i}\bigg]\\
+		&=\sum\limits_{j=0}^{n-1}\rho^jm+\rho^nm_t+E\bigg[\sum\limits_{i=0}^{n}\rho^{n-1}\varepsilon_{t+i}\bigg]\\
+		&=\sum\limits_{j=0}^{n-1}\rho^jm+\rho^nm_t+\sum\limits_{i=0}^{n}\rho^{n-i}E\bigg[\varepsilon_{t+i}\bigg]\\
+		E\bigg[m_{t+n}\bigg]&=\sum\limits_{j=0}^{n-1}\rho^jm+\rho^nm_t=\frac{1-\rho^{n-1}}{(1-\rho)}m+\rho^nm_t
 	\end{align*}
 	
 	Como $m_{t+n}$ depende somente de uma variável conhecida $m_t$ e uma sequência de termos de erro $\{\varepsilon_1,\varepsilon_2,...\varepsilon_{t+n}\}$ de média zero, um modelo univariado pode ser útil para prever a oferta monetária $n$ períodos no futuro. Isto é possível estimando $\rho$ por meio de técnicas univariadas de séries temporais.
-	
+\end{enumerate}
 	------------------------------------
 	
 	\item 
-	a)
+	\begin{enumerate}
+		\item 
+	
 	 
-	i.
+\begin{enumerate}
+	\item 
+	
 	
 	\begin{align*}
 		y_t-1.5y_{t-1}+0.5y_{t-2}&=0\\
@@ -198,7 +207,9 @@
 		b_2=\frac{1.5-\sqrt{(-1.5)^2-4 \times 0.5}}{2}&=0.5
 	\end{align*}
 	
-	ii.
+	A solução homogênea fica $A_1+A_2(0.5)^t$.
+	
+	\item 
 	
 	\begin{align*}
 		y_t-y_{t-2}&=0\\
@@ -208,16 +219,19 @@
 	b_1=1\text{ ou }b_2=-1\\
 	\end{align*}
 	
-	iii.
+	\item 
 	
 	\begin{align*}
 	y_t-2y_{t-1}+y_{t-2}&=0\\
 	\Rightarrow Ab^t-2Ab^{t-1}+Ab^{t-2}&=0\\
 	b^2-2b+1&=0\\
-	b&=1
+	b_1=b_2&=1
 	\end{align*}
 	
-	iv.
+		como são raízes repetidas, a solução homogênea fica $A_1+A_2t$.
+	
+	\item
+	
 	
 	\begin{align*}
 		y_t-y_{t-1}-0.25y_{t-2}+0.25y_{t-3}&=0\\
@@ -228,55 +242,378 @@
 		\Rightarrow b_1=1,\;\;b_2=0.5\;\;b_3=-0.5
 	\end{align*}
 	
-	b)
+		A solução homogênea fica $A_1+A_2(0.5)^t+A_3(-0.5)^t$.
+	\end{enumerate}
+	\item
 	
-	i. 
-	
+	\begin{enumerate}
+	\item
 	\begin{align*}
 		y_t&=1.5y_{t-1}-0.5y_{t-2}+\varepsilon_t\\
-		\Rightarrow y_{t-1}&=1.5y_{t-2}-0.5y_{t-3}+\varepsilon_{t-1}\\
-		y_{t-2}&=1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2}\\
-		y_{t-3}&=1.5y_{t-4}-0.5y_{t-5}+\varepsilon_{t-3}\\
-		\\
-		y_t&=1.5(1.5y_{t-2}-0.5y_{t-3}+\varepsilon_{t-1})-0.5(1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2})+\varepsilon_t\\
-		&=1.5(1.5[1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2}]-0.5y_{t-3}+\varepsilon_{t-1})-0.5(1.5y_{t-3}-0.5y_{t-4}+\varepsilon_{t-2})+\varepsilon_t\\
-		&=1.5(1.5[1.5\{1.5y_{t-4}-0.5y_{t-5}+\varepsilon_{t-3}\}-0.5y_{t-4}+\varepsilon_{t-2}]-0.5y_{t-3}+\varepsilon_{t-1})\\
-		&\;\;\;-0.5(1.5\{1.5y_{t-4}-0.5y_{t-5}+\varepsilon_{t-3}\}-0.5y_{t-4}+\varepsilon_{t-2})+\varepsilon_t\\
-		\\
-		&=(1.5)^4y_{t-4}+(1.5)^{3}(-0.5)y_{t-5}+(1.5)^{3}\varepsilon_{t-3}+(1.5)^{2}(-0.5)y_{t-4}+(1.5)^2\varepsilon_{t-2}\\
-		&\;\;\;+(1.5)^{1}(-0.5)y_{t-3}+(1.5)^{1}\varepsilon_{t-1}+(-0.5)(1.5)^{2}y_{t-4}+(-0.5)^{2}(1.5)y_{t-5}\\
-		&\;\;\;+(-0.5)(1.5)^{1}\varepsilon_{t-3}+(-0.5)^{2}y_{t-4}+(-0.5)^{1}\varepsilon_{t-2}+\varepsilon_t\\
-		\\
-		y_t&=\sum \limits_{i=0}^{\infty}[(1.5)^i-2(-0.5)^{i-3}(1.5)^{i-2}+(-0.5)^{i-2}]y_{-i}+\sum \limits_{i=0}^{\infty}(-0.5)^i(1.5)^i\varepsilon_{t-i}
+		\Rightarrow y_t&=1.5Ly_t-0.5L^2y_{t}+\varepsilon_t\\
+		y_t-1.5Ly_t+0.5L^2y_{t}&=\varepsilon_t\\
+		(1-L)(1-0.5L)y_t&=\varepsilon_t\\
+		y_t&=\frac{\varepsilon_t}{(1-L)(1-0.5L)}
 	\end{align*}
-	Podemos ver que $\lim\limits_{i\rightarrow \infty}y_t=\infty$, portanto a solução retrospectiva não é convergente.
+	Embora a expressão $\varepsilon_t/(1-0.5L)$ seja convergente, a expressão $\varepsilon_t/(1-L)$ não é, portanto a solução retrospectiva é não convergente.
 	
+	\item
+	 \begin{align*}
+		y_t&=y_{t-2}+\varepsilon_t\\
+		\Rightarrow y_t-L^2y_t&=\varepsilon_t\\
+		(1-L^2)y_t&=\varepsilon_t\\
+		(1-L)(1+L)y_t&=\varepsilon_t\\
+		y_t&=\frac{\varepsilon_t}{(1-L)(1+L)y_t}
+	\end{align*}
+	A expressão $\varepsilon_t/(1-L)$ não converge, portanto a solução retrospectiva é não convergente.
 	
-	ii.
+	\item
+	\begin{align*}
+		y_t&=2y_{t-1}-y_{t-2}+\varepsilon_t\\
+		\Rightarrow y_t-2Ly_t+L^2y_t&=\varepsilon_t\\
+		(1-2L+L^2)y_t&=\varepsilon_t\\
+		(1-L)(1-L)y_t&=\varepsilon_t\\
+		y_t&=\frac{\varepsilon_t}{(1-L)(1-L)}
+	\end{align*}
 	
+	Portanto a solução não converge.
+	
+	\item
+	\begin{align*}
+		y_t&=y_{t-1}+0.25y_{t-2}-0.25y_{t-3}+\varepsilon_t\\
+		y_t-Ly_t-0.25L^2y_t+0.25L^3y_t&=\varepsilon_t\\
+		(1-L-0.25L^2+0.25L^3)y_t&=\varepsilon_t\\
+		(1-L)(1+0.5L)(1-0.5L)y_t&=\varepsilon_t\\
+		y_t&=\frac{\varepsilon_t}{(1-L)(1+0.5L)(1-0.5L)}
+	\end{align*}
+	
+	que não converge devido à expressão $\varepsilon_t/(1-L)$.	
+\end{enumerate}	
+\item
+\begin{align*}
+	y_t&=1.5y_{t-1}-0.5y_{t-2}+\varepsilon_t\\
+	y_t-y_{t-1}&=1.5y_{t-1}-y_{t-1}-0.5y_{t-2}+\varepsilon_t\\
+	y_t-y_{t-1}&=0.5y_{t-1}-0.5y_{t-2}+\varepsilon_t\\
+	\Delta y_t&=0.5\Delta y_{t-1}+\varepsilon_t\\
+	\\
+	\Delta y_t&=0.5L\Delta y_{t}+\varepsilon_t\\
+	\Delta y_t-0.5L\Delta y_{t}&=\varepsilon_t\\
+	(1-0.5L)\Delta y_t&=\varepsilon_t\\
+	\Delta y_t&=\frac{\varepsilon_t}{(1-0.5L)}\equiv \sum\limits_{i=0}^{\infty}(0.5)^i\varepsilon_{t-i}
+\end{align*}
+
+\item %d
+
+\begin{enumerate}
+	\item[ii.] 
 	\begin{align*}
 		y_t&=y_{t-2}+\varepsilon_t\\
-		\Rightarrow y_{t-2}&=y_{t-4}+\varepsilon_{t-2}\\
+		y_t-y_{t-1}&=-y_{t-1}+y_{t-2}+\varepsilon_t\\
+		\Delta y_t&=-\Delta  y_{t-1}+\varepsilon_t\\
 		\\
-		y_t&=y_{t-4}+\varepsilon_{t-2}+\varepsilon_t\\
-		&=y_{t-6}+\varepsilon_{t-4}+\varepsilon_{t-2}+\varepsilon_t\\
-		&=y_{t-\infty}+\sum\limits_{\substack{j=0\\i=2j}}^{\infty}\varepsilon_{t-i}
+		\Delta y_t&=-\Delta  Ly_{t}+\varepsilon_t\\
+		(1+L)\Delta y_t&=\varepsilon_t\\
+		\Delta y_t&=\frac{\varepsilon_t}{(1+L)}\equiv \sum\limits_{i=0}^{\infty}(-1)^i\varepsilon_{t-i}\\
+		\text{não converge}&\text{, portanto não há solução.}
 	\end{align*}
-	Podemos ver que $\lim\limits_{j\rightarrow \infty}y_t=\infty$, portanto a solução retrospectiva não é convergente.
 	
-	iii.
+	\item[iii.]
+	\begin{align*}
+		y_t&=2y_{t-1}-y_{t-2}+\varepsilon_t\\
+		y_t-y_{t-1}&=2y_{t-1}-y_{t-1}-y_{t-2}+\varepsilon_t\\
+		\Delta y_t&=\Delta y_{t-1}+\varepsilon_t\\
+		\\
+		\Delta y_t&=\Delta Ly_{t}+\varepsilon_t\\
+		(1-L)\Delta y_t&=\varepsilon_t\\
+		\Delta y_t&=\frac{\varepsilon_t}{(1-L)}\equiv\sum\limits_{i=0}^{\infty}(1)^i\varepsilon_{t-i}\\
+		\text{não converge}&\text{, portanto não há solução.}
+	\end{align*}
+	
+	\item[iv.]
 	
 	\begin{align*}
-		y_t&=2y_{t-1}-y_+t-2+\varepsilon_t\\
-	\text{de i. podemos deduzir que}\\
-		y_t&=\sum \limits_{i=0}^{\infty}[(2)^i-2(-1)^{i-3}(2)^{i-2}+(-1)^{i-2}]y_{-i}+\sum \limits_{i=0}^{\infty}(-1)^i(2)^i\varepsilon_{t-i}
-	\end{align*}
-	Como $\lim\limits_{i\rightarrow \infty}y_t=\infty$, portanto a solução retrospectiva não é convergente.
+		y_t&=y_{t-1}+0.25y_{t-2}-0.25y_{t-3}+\varepsilon_t\\
+		y_t-y_{t-1}&=0.25y_{t-2}-0.25y_{t-3}+\varepsilon_t\\
+		\Delta y_t&=0.25\Delta y_{t-2}+\varepsilon_t\\
+		\\
+		\Delta y_t&=0.25\Delta L^2y_{t}+\varepsilon_t\\
+		(1-0.25L^2)\Delta y_t&=\varepsilon_t\\
+		\Delta y_t&=\frac{\varepsilon_t}{(1+0.5L)(1-0.5L)}=\frac{\varepsilon_t}{(1+0.5L)}\frac{1}{(1-0.5L)}\\
+		&\equiv\Bigg[\sum\limits_{i=0}^{\infty}(-0.5)^i\varepsilon_{t-i}\Bigg]\Bigg[\sum\limits_{i=0}^{\infty}(0.5)^i(1)\Bigg]=2\sum\limits_{i=0}^{\infty}(-0.5)^i\varepsilon_{t-i}\\
+		\text{que converge}&\text{, portanto esta solução existe.}
+	\end{align*}	
+\end{enumerate}
+
+	\item %e 
+	Já foi realizado anteriormente.
 	
-	iv.
+	\item %f
 	
 	\begin{align*}
-		y_t=y_{t-1}+0.25y_{t-2}-0.25y_{t-3}+\varepsilon_t
+		y_t&=a_0-y_{t-1}+\varepsilon_t\\
+		\\
+		y_0&=y_0\\
+		y_1&=a_0-y_0+\varepsilon_1\\
+		y_2&=a_0-y_1+\varepsilon_2=a_0-(a_0-y_0+\varepsilon_1)+\varepsilon_2=y_0+\varepsilon_2-\varepsilon_1\\
+		y_3&=a_0-y_{2}+\varepsilon_3=a_0-(y_0+\varepsilon_2-\varepsilon_1)+\varepsilon_3=a_0-y_0+\varepsilon_3-\varepsilon_2+\varepsilon_1\\
+		\Rightarrow y_t&=\frac{a_0+\varepsilon_t}{1+L}\equiv \sum\limits_{i=0}^{t-1}(-1)^ia_0+\sum\limits_{i=0}^{t-1}(-1)^i\varepsilon_{t-i}\\
+		\text{não converge.}&
+	\end{align*}		
+\end{enumerate}
+
+	------------------------------------
+
+\item %5
+\begin{enumerate}
+	\item %a
+	\begin{enumerate}
+		\item %i
+		\begin{align*} 
+		y_t&=0.75y_{t-1}-0.125y_{t-2}\\
+		\Rightarrow b^2-0.75b+0.125&=0\\
+		b_{1,2}=\frac{-a_1\pm\sqrt{d}}{2}, \;\;d&=(a_1)^2-4a_2,\,\,a_1=-0.75, \;\;a_2=0.125\\
+		d&=(-0.75)^2-4\times0.125=0.0625\\
+		b_1&=\frac{0.75+\sqrt{0.0625}}{2}=0.5\\
+		b_2&=\frac{0.75-\sqrt{0.0625}}{2}=0.25\\
+		\\
+		y_t&=A_10.5^t+A_20.25^t
 	\end{align*}
+	
+	\item %ii
+	\begin{align*}
+		y_t&=1.5y_{t-1}-0.75y_{t-2}\\
+		\Rightarrow b^2-1.5b+0.75&=0\\
+		b_{1,2}&=\frac{1.5\pm\sqrt{(-1.5)^2-4\times 0.75}}{2}\\
+		b_{1}&=\frac{1.5+\sqrt{-0.75}}{2}=0.75+i\sqrt{\frac{0.75}{4}}=0.75+i\sqrt{0.1875}\\
+		b_{2}&=\frac{1.5-\sqrt{-0.75}}{2}=0.75-i\sqrt{0.1875}\\
+		\\
+		y_t&=A_1(0.75+i\sqrt{0.1875})^t+A_2(0.75-i\sqrt{0.1875})^t
+	\end{align*}		
+		
+	\item %iii
+	\begin{align*}
+		y_t&=1.8y_{t-1}-0.81y_{t-2}\\
+		\Rightarrow b^2-1.8b+0.81&=0\\
+		b_{1,2}&=\frac{1.8\pm\sqrt{(-1.8)^2-4\times 0.81}}{2}\\
+		d&=0\\
+		b_1&=b_2=0.9\\
+		\\
+		y_t&=A_1(0.9)^t+A_2t(0.9)^t
+	\end{align*}
+	
+	\item %iv
+	\begin{align*}
+		y_t&=1.5y_{t-1}-0.5625y_{t-2}\\
+		\Rightarrow b^2-1.5b+0.5625&=0\\
+		b_{1,2}&=\frac{1.5\pm \sqrt{(-1.5)^2-4\times 0.5625}}{2}\\
+		d&=0\\
+		b_1&=b_2=0.75\\
+		\\
+		y_t&=A_1(0.75)^t+A_2t(0.75)^t
+	\end{align*}
+\end{enumerate}
+	
+	\item %b
+	\begin{enumerate}
+		\item %5bi
+	
+	\begin{align*}
+		y_t&=A_10.5^t+A_20.25^t,\;\;y_1=y_2=10\\
+		\Rightarrow y_1=10&=A_10.5^1+A_20.25^1\\
+		A_1&=20-A_20.5\\
+		\\
+		y_2=10&=(20-A_20.5)(0.5)^2+A_2(0.25)^2\\
+		10&=(20-A_20.5)(0.25)+A_2(0.0.625)\\
+		10&=(5-A_20.125)+A_2(0.0.625)\\
+		5&=-A_20.0625\\
+		A_2&=-80\\
+		\\
+		A_1&=20-(-80)0.5\\
+		A_1&=60\\
+		\\
+		y_t&=60(0.5)^t-80(0.25)^t
+	\end{align*}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics{C:/Users/Lucca/GoogleDrive/DOUTORADO_UFPR/Macroeconometria/solution_enders/5bi.eps}
+	\end{figure}
+	
+	\item %5bii
+	
+	\begin{align*}
+		y_t&=A_1(0.75+i\sqrt{0.1875})^t+A_2(0.75-i\sqrt{0.1875})^t\\
+		\\
+		(h\pm iv)^t&=R^t(\text{cos}(\theta t)\pm i\,\text{sen}(\theta t))\\
+		 \;\;\;R=\sqrt{0.75}, \;\; \text{cos}(\theta)&=\frac{1.5}{2\sqrt{0.75}}=\sqrt{0.75},\;\; \text{sen}(\theta)=\sqrt{1-\frac{(-1.5)^2}{4(0.75)}}=0.5\rightarrow \theta=\frac{\pi}{6}\\
+		 \\
+		\Rightarrow  y_t&=\sqrt{0.75}^t[A_1\{\text{cos}(\theta t)+ i\,\text{sen}(\theta t)\}+A_2\{\text{cos}(\theta t)- i\,\text{sen}(\theta t)\}]\\
+		&=\sqrt{0.75}^t\{[A_1+A_2]\text{cos}(\theta t)+[A_1-A_2]i\,\text{sen}(\theta t)\}\\
+		y_t&=\sqrt{0.75}^t\{A_5\,\text{cos}(\frac{\pi}{6} t)+\,A_6\text{sen}(\frac{\pi}{6} t)\}\text{ (forma polar) }\\
+		\end{align*}
+		
+		\begin{align*}
+		y_1=y_2&=10 \Rightarrow\\
+		10&=\sqrt{0.75}\{A_5\,\text{cos}(\frac{\pi}{6} )+A_6\,\text{sen}(\frac{\pi}{6} )\}\\
+			\frac{10}{\sqrt{0.75}}&=A_5\sqrt{0.75}+A_60.5\\
+			A_6&=\frac{20}{\sqrt{0.75}}-A_52\sqrt{0.75}\\
+			\\
+			10&=\sqrt{0.75}^2\{A_5\,\text{cos}(2\frac{\pi}{6} )+A_6\,\text{sen}(2\frac{\pi}{6} )\}\\
+			10&=0.75\{A_5\,\text{cos}(\frac{\pi}{3} )+(\frac{20}{\sqrt{0.75}}-A_52\sqrt{0.75})\,\text{sen}(\frac{\pi}{3} )\}\\
+			10&=0.75\{A_5\,0.5+(\frac{20}{\sqrt{0.75}}-A_52\sqrt{0.75})\,\sqrt{0.75}\}\\
+			15&=A_50.5+20-A_51.5\Rightarrow A_5=5 \text{ e } A_6=\frac{2\sqrt{3}}{3}\\
+			\\
+			y_t&=\sqrt{0.75}^t\{5\,\text{cos}(\frac{\pi}{6} t)+\,\frac{2\sqrt{3}}{3}\text{sen}(\frac{\pi}{6} t)\}
+		\end{align*}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics{C:/Users/Lucca/GoogleDrive/DOUTORADO_UFPR/Macroeconometria/solution_enders/5bii.eps}
+	\end{figure}
+	
+	\item %5biii
+	
+	\begin{align*}
+		y_t&=A_1(0.9)^t+A_2t(0.9)^t\\
+	y_1	\Rightarrow 10&=A_1(0.9)+A_2(0.9)\\
+		A_1&=\frac{10}{0.9}-A_2\\
+	y_2 \Rightarrow 10&=A_1(0.9)^2+A_22(0.9)^2\\
+		10&=(\frac{10}{0.9}-A_2)^2+A_21.62=\frac{100}{0.81}-2A_2\frac{10}{0.9}+A_21.62\\
+		10-\frac{100}{0.81}&=-A_2\frac{20}{0.9}+A_21.62\\
+		-113.45679&=-20,60222A_2\\
+		\Rightarrow &A_2\approx 5.5 \text{ e } A_1\approx5.6\\
+		\\
+		y_t&=5.6(0.9)^t+5.5t(0.9)^t
+	\end{align*}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics{C:/Users/Lucca/GoogleDrive/DOUTORADO_UFPR/Macroeconometria/solution_enders/5biii.eps}
+	\end{figure}
+	
+	\item %5biv
+	
+	\begin{align*}
+		y_t&=A_1(0.75)^t+A_2t(0.75)^t\\
+		y_1\Rightarrow 10&=A_1(0.75)+A_2(0.75)\\
+		A_1&=\frac{40}{3}-A_2\\
+		\\
+		y_t&=(\frac{40}{3}-A_2)(0.75)^t+A_2t(0.75)^t\\
+		y_2 \Rightarrow 10&=(\frac{40}{3}-A_2)(0.75)^2+A_22(0.75)^2\\
+		10&=\frac{15}{2}-A_2\frac{9}{16}+A_2\frac{18}{16}\\
+		A_2&=\frac{5}{2}\frac{16}{9}=\frac{40}{9} \text{ e } A_1=\frac{80}{9}\\
+		\\
+		y_t&=\frac{80}{9}(0.75)^t+\frac{40}{9}t(0.75)^t
+	\end{align*}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics{C:/Users/Lucca/GoogleDrive/DOUTORADO_UFPR/Macroeconometria/solution_enders/5biv.eps}
+	\end{figure}
+	
+\end{enumerate}
+	
+\end{enumerate}
+
+\item %6
+
+\begin{enumerate}
+	\item %6a
+	
+	\begin{align*}
+		 y_t &= 1 + 0.7y_{t-1} - 0.1y_{t-2} + \varepsilon_t\\
+		y_t -0.7y_{t_1} + 0.1y_{t-2} =0 \Rightarrow b_{1,2}&=\frac{0.7\pm \sqrt{0.7^2-4(0.1)}}{2}\\
+		 b_1&=0.5\\
+		 b_2&=0.2\\
+		 y_t^c&=A_1^t0.5+A_20.2^t\\
+		 \\
+		\text{A solução particular teste neste caso é}\\
+		 y_t^p&=b_0+b_1t+b_2t^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}\\
+		 \Rightarrow b_0+b_1t+b_2t^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}&=1+0.7[b_0+b_1(t-1)+b_2(t-1)^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-1-i}]\\
+		 &\;\;\;-0.1[b_0+b_1(t-2)+b_2(t-2)^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-2-i}]+\varepsilon_t\\
+		 \text{Tratando primeiramente da parte}&\text{ estocástica da solução particular}\\
+		 \Rightarrow \alpha_0&=1\\
+				 \alpha_1&=0.7\alpha_0\\
+				 \alpha_2&=0.7\alpha_1-0.1\alpha_0\\
+				 \alpha_3&=0.7\alpha_2-0.1\alpha_1\\
+				 \alpha_4&=0.7\alpha_3-0.1\alpha_2\\
+				 &\vdots\\
+				 \alpha_i&=0.7\alpha_{i-1}-0.1\alpha_{i-2}\\
+				 \\
+				 \Rightarrow  \alpha_i-0.7\alpha_{i-1}+0.1\alpha_{i-2}&=0\\
+				 \alpha_i=A_1(0.2)^i&+A_2(0.5)^i\\
+				 \alpha_0=1 \Rightarrow A_1&=1-A_2\\
+				 \\
+				  \alpha_i=(1-A_2)(0.2)^i&+A_2(0.5)^i\\
+				 \alpha_1=0.7\Rightarrow 0.7&=(1-A_2)(0.2)+A_2(0.5)\\
+				 0.7&=0.2-A_2(0.2)+A_2(0.5)\\
+				 0.5&=A_2(0.3)\Rightarrow A_2=\frac{5}{3} \text{ e } A_1=-\frac{2}{3}\\
+				 \\
+				 \alpha_i&=-\frac{2}{3}(0.2)^i+\frac{5}{3}(0.5)^i
+	\end{align*}
+	
+	Como neste problema não existe raiz unitária, não existe tendência na solução particular, então $b_1=b_2=0$. Se $y_t^p=b_0$ e tratando $\varepsilon_{t-i}=0$, podemos encontrar a parte determinística da solução particular.
+	\begin{align*}
+		b_0&=1+0.7b_0-0.1b_0\\
+		b_0&=\frac{1}{(1-0.7+0.1)}=\frac{5}{2}\\
+		\\
+		\Rightarrow y_t^p&=\frac{5}{2}+\sum\limits_{i=0}^{\infty}\Bigg[\frac{5}{3}(0.5)^i-\frac{2}{3}(0.2)^i\Bigg]\varepsilon_{t-i}
+	\end{align*}
+	
+	Então a solução geral fica:
+	
+	\begin{align*}
+	y_t=y_t^c+y_t^p=A_10.5^t+A_20.2^t+\frac{5}{2}+\sum\limits_{i=0}^{\infty}\Bigg[\frac{5}{3}(0.5)^i-\frac{2}{3}(0.2)^i\Bigg]\varepsilon_{t-i}
+	\end{align*}
+
+	
+		
+		
+	\item %6b	
+	\begin{align*}
+			y_t &= 1 -0.3y_{t-1} + 0.1y_{t-2} + \varepsilon_t\\
+			b_1&=\frac{-0.3+\sqrt{(0.3)^2+4(0.1)}}{2}=0.2\\
+			b_2&=\frac{-0.3-\sqrt{(0.3)^2+4(0.1)}}{2}=-0.5\\
+			\\
+			y_t^c&=A_1(0.2)^t+A_2(-0.5)^t
+	\end{align*}
+	
+	solução particular determinística
+	
+	\begin{align*}
+	 y_t^{p,d}=b_0 \Rightarrow b_0&=1-0.3b_0+0.1b_0\\
+	 y_t^{p,d}=b_0&=\frac{1}{1+0.3-0.1}=0.8333
+	\end{align*}
+	
+	solução particular estocástica
+	
+	\begin{align*}
+	y_t^{p,e}&=\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}
+	\end{align*}
+	substituindo na equação em diferença
+	\begin{align*}
+	\alpha_i\sum\limits_{i=0}^{\infty}\varepsilon_{t-i}&=1-0.3\Bigg[\alpha_i\sum\limits_{i=0}^{\infty}\varepsilon_{t-1-i}\Bigg]+0.1\Bigg[\alpha_i\sum\limits_{i=0}^{\infty}\varepsilon_{t-2-i}\Bigg]+\varepsilon_t\\
+	\\
+	\Rightarrow \alpha_0&=1\\
+	\alpha_1&=-0.3\alpha_0=-0.3\\
+	\alpha_2&=-0.3\alpha_1+0.1\alpha_0\\
+	&\vdots\\
+	\alpha_i&=-0.3\alpha_{i-1}+0.1\alpha_{i-2}\\
+	\end{align*}
+	\begin{align*}
+	\Rightarrow \alpha_i&=A_1(0.2)^i+A_2(-0.5)^i\\
+	\alpha_0&=1 \Rightarrow A_1=1-A_2\\
+	\alpha_i&=(1-A_2)(0.2)^i+A_2(-0.5)^i\\
+	\alpha_1=-0.3\Rightarrow &-0.3=(1-A_2)(0.2)+A_2(-0.5)\\
+	&-0.3=0.2-A_2(0.2)+A_2(-0.5)\Rightarrow A_2=\frac{5}{7} \text{ e }A_1=\frac{2}{7}\\
+	\alpha_i&=\bigg(\frac{2}{7}\bigg)(0.2)^i+\bigg(\frac{5}{7}\bigg)(-0.5)^i\\
+	y_t^{p,e}&=\sum\limits_{i=0}^{\infty}\Bigg[\bigg(\frac{2}{7}\bigg)(0.2)^i+\bigg(\frac{5}{7}\bigg)(-0.5)^i\Bigg]\varepsilon_{t-i}
+\end{align*}
+	A solução geral fica
+	\begin{align*}
+	y_t=y_t^c+y_t^{p,d}+y_t^{p,e}=A_1(0.2)^t+A_2(-0.5)^t+\frac{12}{10}+\sum\limits_{i=0}^{\infty}\Bigg[\bigg(\frac{2}{7}\bigg)(0.2)^i+\bigg(\frac{5}{7}\bigg)(-0.5)^i\Bigg]\varepsilon_{t-i}
+	\end{align*}
+\end{enumerate}
+			
 \end{enumerate}
 

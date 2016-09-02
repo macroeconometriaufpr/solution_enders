@@ -515,6 +515,8 @@
 	
 \end{enumerate}
 
+	------------------------------------
+
 \item %6
 
 \begin{enumerate}
@@ -569,7 +571,8 @@
 	
 		
 		
-	\item %6b	
+	\item %6b
+	Função complementar	
 	\begin{align*}
 			y_t &= 1 -0.3y_{t-1} + 0.1y_{t-2} + \varepsilon_t\\
 			b_1&=\frac{-0.3+\sqrt{(0.3)^2+4(0.1)}}{2}=0.2\\
@@ -592,7 +595,7 @@
 	\end{align*}
 	substituindo na equação em diferença
 	\begin{align*}
-	\alpha_i\sum\limits_{i=0}^{\infty}\varepsilon_{t-i}&=1-0.3\Bigg[\alpha_i\sum\limits_{i=0}^{\infty}\varepsilon_{t-1-i}\Bigg]+0.1\Bigg[\alpha_i\sum\limits_{i=0}^{\infty}\varepsilon_{t-2-i}\Bigg]+\varepsilon_t\\
+	\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}&=1-0.3\Bigg[\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-1-i}\Bigg]+0.1\Bigg[\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-2-i}\Bigg]+\varepsilon_t\\
 	\\
 	\Rightarrow \alpha_0&=1\\
 	\alpha_1&=-0.3\alpha_0=-0.3\\
@@ -614,6 +617,165 @@
 	y_t=y_t^c+y_t^{p,d}+y_t^{p,e}=A_1(0.2)^t+A_2(-0.5)^t+\frac{12}{10}+\sum\limits_{i=0}^{\infty}\Bigg[\bigg(\frac{2}{7}\bigg)(0.2)^i+\bigg(\frac{5}{7}\bigg)(-0.5)^i\Bigg]\varepsilon_{t-i}
 	\end{align*}
 \end{enumerate}
+
+	------------------------------------
+
+\item %7
+ $y_t=a_0+a_2y_{t-2}+\varepsilon_t$
+ 
+ \begin{enumerate}
+ 	\item %7a
+ 	\begin{align*}
+ 	y_t-a_2y_{t-2}&=0\\
+ 	\Rightarrow b^2-a_2=0,&\;\;\; b_{1,2}=\pm \sqrt{a_2}\\
+ 	y_t^c=A_1\sqrt{a_2}^t&+A_2(-\sqrt{a_2})^t
+ 	\end{align*}
+ 	
+ 	\item %7b
+ 	
+ 	\begin{align*}
+		 y_t^p&=b_0+b_1t+b_2t^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}\\
+		 \Rightarrow b_0+b_1t+b_2t^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}&=a_0+a_2\bigg[b_0+b_1t+b_2t^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-2-i}\bigg]+\varepsilon_t\\
+		 \\
+		 \alpha_0&=1 \text{ e }\alpha_1=0\\
+		 \alpha_2&=a_2\alpha_0=a_2\\
+		 \alpha_3&=a_2\alpha_1=0\\
+		 \alpha_4&=a_2\alpha_2=a_2^2\\
+		 \alpha_5&=a_2\alpha_3=0\\
+		 &\vdots\\
+		 \alpha_i&=a_2\alpha_{i-2}\\
+		 \Rightarrow \alpha_i&=A_1\sqrt{a_2}^i+A_2(-\sqrt{a_2})^i\\
+		 \alpha_0=1 \Rightarrow & A_1=1-A_2\\
+		 \alpha_i&=[1-A_2]\sqrt{a_2}^i+A_2(-\sqrt{a_2})^i\\
+		 \alpha_1=0 \Rightarrow 0&=[1-A_2]\sqrt{a_2}+A_2(-\sqrt{a_2})\\
+		 A_2&=\frac{1}{2\sqrt{a_2}} \text{ e } A_1=1-\frac{1}{2\sqrt{a_2}}\\
+		 \alpha_i&=\bigg[1-\frac{1}{2\sqrt{a_2}}\bigg]\sqrt{a_2}^i+\bigg[\frac{1}{2\sqrt{a_2}}\bigg](-\sqrt{a_2})^i
+		 \end{align*}
+		 
+		 \begin{align*}
+		 b_0+b_1t+b_2t^2&=a_0+a_2\bigg[b_0+b_1t+b_2t^2\bigg]\\
+		 \Rightarrow  &b_0(1-a_2)+b_1(1-a_2)t+b_2(1-a_2)t^2-a_0=0\\
+		 \\
+		 \text{se }& a_2\neq 1\Rightarrow b_1=b_2=0 \text{ e } b_0=\frac{a_0}{(1-a_2)}\\
+		 y_t^p&=\frac{a_0}{(1-a_2)}+\sum\limits_{i=0}^{\infty}\Bigg\{\bigg[1-\frac{1}{2\sqrt{a_2}}\bigg]\sqrt{a_2}^i+\bigg[\frac{1}{2\sqrt{a_2}}\bigg](-\sqrt{a_2})^i\Bigg\}\varepsilon_{t-i}\\
+		  \end{align*}
+		  Se $a_2=1$ implica em $a_0=0$ e temos duas raízes unitárias $1$ e $-1$. Com isso, o efeito do termo de erro não diminui à medida que o tempo passa e a solução geral não converge.
+		  
+		  \item %7c
+		  
+		  \begin{align*}
+		   y_t^p&=a_0+a_2L^2y_t+\varepsilon_t\\
+		   y_t^p&=\frac{a_0}{(1-a_2L^2)}+\frac{\varepsilon_t}{(1-a_2L^2)}\\
+		   \equiv &\frac{a_0}{1-a_2}+\frac{1}{(1-\sqrt{a_2}L)}\frac{\varepsilon_t}{(1+\sqrt{a_2}L)}\\
+		   y_t^p&=\frac{a_0}{1-a_2}+\frac{1}{(1-\sqrt{a_2})}\sum\limits_{i=0}^{\infty}(-\sqrt{a_2})^i\varepsilon_{t-i}
+		   \end{align*}
+		 
+ \end{enumerate}
+ 
+	 -----------------------------------
 			
+	\item %8
+	
+	\begin{enumerate}
+		\item %8a 
+		\begin{align*}
+			y_t-y_{t-1}&=0\\
+			\Rightarrow Ab^t-Ab^{t-1}&=0\\
+			b&=1\Rightarrow y_t=A\equiv y_t=c\\
+	\end{align*}
+			
+		\item %8b 
+		\begin{align*}
+			y_t-y_{t-1}&=a_0\\
+			\Rightarrow y_t^c&=A\\
+			y_t^p&=kt \Rightarrow kt-k(t-1)=a_0\\
+			k&=a_0 \Rightarrow y_t^p=a_0t\\
+			y_t&=c+a_0t
+		\end{align*}
+		
+		\item %8c
+		\begin{align*}
+			y_t-y_{t-2}&=0\\
+			\Rightarrow b^2-1&=0\\
+			b_{1,2}=\pm 1 \Rightarrow& y_t=A_1(1)^t+A_2(-1)^t\equiv y_t=c+a_0(-1)^t
+		\end{align*}
+		
+		\item %8d
+		
+		\begin{align*}
+			y_t-y_{t-2}&=\varepsilon_t\\
+			y_t-y_{t-2}&=0 \Rightarrow b_{1,2}=\pm1\\
+			y_t^c&=A_1+A_2(-1)^t\\
+			y_t^p-L^2y_t^p&=\varepsilon_t\Rightarrow\\ y_t^p&=\frac{\varepsilon_t}{1-L^2}=\frac{1}{(1-L)}\frac{\varepsilon_t}{(1+L)}=\sum \limits_{i=0}^{\infty}(1)^i\sum \limits_{i=0}^{\infty}(-1)^i\varepsilon_{t-i}\\
+			&=i\sum \limits_{i=0}^{\infty}(-1)^i\varepsilon_{t-i}=\sum \limits_{i=0}^{\infty}(-1)^ii\varepsilon_{t-i}\\
+			\\
+			y_t&=y_t^c+y_t^p=A_1+A_2(-1)^t+\sum \limits_{i=0}^{\infty}(-1)^ii\varepsilon_{t-i}
+		\end{align*}
+	
+	\end{enumerate}
+	
+	\item %9
+	:
+	\begin{enumerate}
+		
+		\item %9a
+		\begin{enumerate}
+			\item %i
+		
+		\begin{align*}
+			y_t-1.2y_{t-1}+0.2t_{t-2}&=0\\
+			\Rightarrow b_1&=\frac{1.2+\sqrt{1.2^2-4(0.2)}}{2}=1\\
+			b_2&=\frac{1.2-\sqrt{1.2^2-4(0.2)}}{2}=0.2
+		\end{align*}		
+		A sequência $\{y_t\}$ não é estável pois possui uma raiz unitária. As raízes características são reais e positivas.
+		
+		\item %ii
+		
+		\begin{align*}
+			y_t-1.2Ly_t+0.2L^2y_t&=0\\
+			y_t(1-1.2L+0.2L^2)&=0\\
+			\Rightarrow L^2-6L+5=&0\\
+			L_1=3+\frac{\sqrt{6^2-4(5)}}{2}=5\\
+			L_2=3-\frac{\sqrt{6^2-4(5)}}{2}=1\\
+			\end{align*}
+			
+	\end{enumerate}
+		\item %9b
+		\begin{align*}
+				y_t-1.2y_{t-1}+0.4t_{t-2}&=0\\
+				\Rightarrow b_1&=\frac{1.2+\sqrt{1.2^2-4(0.4)}}{2}=0.6+i\,0.2\\
+				b_2&=\frac{1.2-\sqrt{1.2^2-4(0.4)}}{2}=0.6-i\,0.2
+			\end{align*}
+		As raízes são imaginárias e a sequência $\{y_t\}$ possui padrão flutuante de natureza periódica. Como $R=\sqrt{a_2}=\sqrt{1.2}=1.095>1$ a sequência não é estável. As partes reais são positivas.
+		
+		\item %9c
+		\begin{align*}
+			y_t-1.2y_{t-1}+1.2t_{t-2}&=0\\
+			b_1&=0.6+\frac{\sqrt{1.2^2+4(1.2)}}{2}=1.85\\
+			b_2&=0.6-\frac{\sqrt{1.2^2+4(1.2)}}{2}=-0.65
+			\end{align*}
+		As raízes são reais, uma sendo positiva e a outra negativa. Como uma das raízes é maior que um em valor absoluto, a sequência $\{y_t\}$ não é estável.
+		
+		\item %9d
+		\begin{align*}
+			y_t+1.2y_{t-1}&=0\\
+			\Rightarrow b+1=0,\;\;b=-1
+		\end{align*}
+		A sequência possui raiz unitária, real e negativa, portanto não é estável.
+		
+		\item %9e
+		
+		\begin{align*}
+			y_t-0.7y_{t-1}-0.25y_{t-2}+0.175y_{t-3}&=0\\
+			\Rightarrow  b^3-0.7b^2-0.25b+0.175&=0\\
+			(b-0.5)(b+0.5)(b-0.7)&=0\\
+			b_1=0.5,\;b_2=-0.5,\;b_3=0.7
+		\end{align*}
+		A sequência é estável, com três raízes reais sendo duas positivas e uma negativa.
+	\end{enumerate}
+		
+	
+	
+	
 \end{enumerate}
 

@@ -715,7 +715,7 @@
 	\end{enumerate}
 	
 	\item %9
-	:
+	
 	\begin{enumerate}
 		
 		\item %9a
@@ -741,14 +741,34 @@
 			
 	\end{enumerate}
 		\item %9b
+		
+		\begin{enumerate}
+			\item %9bi
+		
 		\begin{align*}
-				y_t-1.2y_{t-1}+0.4t_{t-2}&=0\\
+				y_t-1.2y_{t-1}+0.4y_{t-2}&=0\\
 				\Rightarrow b_1&=\frac{1.2+\sqrt{1.2^2-4(0.4)}}{2}=0.6+i\,0.2\\
 				b_2&=\frac{1.2-\sqrt{1.2^2-4(0.4)}}{2}=0.6-i\,0.2
 			\end{align*}
 		As raízes são imaginárias e a sequência $\{y_t\}$ possui padrão flutuante de natureza periódica. Como $R=\sqrt{a_2}=\sqrt{1.2}=1.095>1$ a sequência não é estável. As partes reais são positivas.
 		
+		\item %9b11
+		
+		\begin{align*}
+			y_t-1.2Ly_t+0.4L^2y_t&=0\\
+			y_t(1-1.2L+0.4L^2)&=0\\
+			\Rightarrow 2.5-2L+L^2&=0\\
+			L_1=1+\frac{\sqrt{2^2-4(2.5)}}{2}=1+i\,\sqrt{\frac{3}{2}}\\
+			L_2=1-\frac{\sqrt{2^2-4(2.5)}}{2}=1-i\,\sqrt{\frac{3}{2}}\\
+		\end{align*}
+		
+	\end{enumerate}
+		
 		\item %9c
+		
+		\begin{enumerate}
+			\item %9ci
+		
 		\begin{align*}
 			y_t-1.2y_{t-1}+1.2t_{t-2}&=0\\
 			b_1&=0.6+\frac{\sqrt{1.2^2+4(1.2)}}{2}=1.85\\
@@ -756,14 +776,43 @@
 			\end{align*}
 		As raízes são reais, uma sendo positiva e a outra negativa. Como uma das raízes é maior que um em valor absoluto, a sequência $\{y_t\}$ não é estável.
 		
+		\item %9cii
+		\begin{align*}
+			y_t(1-1.2L+1.2L2)&=0\\
+			\Rightarrow \frac{10}{12}-L+L^2&=0\\
+			L_1=0.5+\frac{\sqrt{1^2-4(\frac{10}{12})}}{2}=0.5+i\,\sqrt{\frac{28}{3}}\\
+			L_2=0.5-\frac{\sqrt{1^2-4(\frac{10}{12})}}{2}=0.5-i\,\sqrt{\frac{28}{3}}
+		\end{align*}
+		
+	\end{enumerate}
+		
 		\item %9d
+		
+		\begin{enumerate}
+			\item %9di
+		
 		\begin{align*}
 			y_t+1.2y_{t-1}&=0\\
 			\Rightarrow b+1=0,\;\;b=-1
 		\end{align*}
 		A sequência possui raiz unitária, real e negativa, portanto não é estável.
 		
+		\item %9dii
+		
+		\begin{align*}
+			y_t(1+1.2L^2)=0\\
+			\Rightarrow \frac{10}{12}+L^2=0\\
+			L_1=\sqrt{\frac{5}{6}}\\
+			L_2=-\sqrt{\frac{5}{6}}
+		\end{align*}
+		
+	\end{enumerate}
+		
 		\item %9e
+		
+		\begin{enumerate}
+			\item %9ei
+		
 		
 		\begin{align*}
 			y_t-0.7y_{t-1}-0.25y_{t-2}+0.175y_{t-3}&=0\\
@@ -772,10 +821,257 @@
 			b_1=0.5,\;b_2=-0.5,\;b_3=0.7
 		\end{align*}
 		A sequência é estável, com três raízes reais sendo duas positivas e uma negativa.
+		
+		\item %9eii
+		
+		\begin{align*}
+			y_t(1-0.7L-0.25L^2+0.175L^3)&=0\\
+			\Rightarrow 
+		1-\frac{7}{10}L-\frac{1}{4}L^2+\frac{7}{40}L^3&=0\\
+		\frac{1}{40}(7L-10)(L-2)(L+2)&=0\\
+		(7L-10)(L-2)(L+2)&=0\\
+		L_1=\frac{10}{7},\;L_2=2,\;L_3&=-2		
+		\end{align*}
+		
+		\end{enumerate}
+		
+		
 	\end{enumerate}
 		
+	\item %10
+	\begin{align*}
+		y_t=0.8y_{t-1}+\varepsilon_t-0.5\varepsilon_{t-1}
+	\end{align*}
 	
+	\begin{enumerate}
+		\item %10a
+		\begin{align*}
+			y_1&=1\\
+			y_2&=0.8y_1+\varepsilon_2-0.5\varepsilon_1=\varepsilon_2+0.3\\
+			y_3&=0.8y_2+\varepsilon_3-0.5\varepsilon_2=0.8(\varepsilon_2+0.3)+\varepsilon_3-0.5\varepsilon_2=\varepsilon_3+0.3\varepsilon_2+0.24\\
+			y_4&=0.8y_3+\varepsilon_4-0.5\varepsilon_3=0.8(\varepsilon_3+0.3\varepsilon_2+0.24)+\varepsilon_4-0.5\varepsilon_3=\varepsilon_4+0.3\varepsilon_3+0.24\varepsilon_2+0.192\\
+			y_5&=0.8y_4+\varepsilon_5-0.5\varepsilon_4=0.8(\varepsilon_4+0.3\varepsilon_3+0.24\varepsilon_2+0.192)+\varepsilon_5-0.5\varepsilon_4\\
+			&=\varepsilon_5+0.3\varepsilon_4+0.24\varepsilon_3+0.192\varepsilon_2+0.1536
+		\end{align*}
+		
+		\item %10b
+		
+		\begin{align*}
+			y_t^c&=A(0.8)^t\\
+			\\
+			y_t^p\Rightarrow y_t&=0.8Ly_t+\varepsilon_t-0.5L\varepsilon_t\\
+			y_t^p&=\frac{\varepsilon_t-0.5L\varepsilon_t}{(1-0.8L)}=\sum\limits_{i=0}^{\infty}(0.8)^{i}(\varepsilon_{t-i})-\sum\limits_{i=0}^{\infty}(0.8)^{i}(0.5\varepsilon_{t-1-i})=\varepsilon_t+\sum\limits_{i=0}^{\infty}(0.8)^{i}(0.3\varepsilon_{t-(i+1)})\\
+			y_t^*&=A(0.8)^t+\varepsilon_t+\sum\limits_{i=0}^{\infty}(0.8)^{i}(0.3\varepsilon_{t-(i+1)})
+		\end{align*}
+		
+		\item %10c
+		\begin{align*}
+			y_0&=0 \Rightarrow 0=A\;\;\therefore\\
+			y_t^*&=\varepsilon_t+\sum\limits_{i=0}^{\infty}(0.8)^{i}(0.3\varepsilon_{t-(i+1)})
+		\end{align*}
+		
+		\item %10d
+		\begin{align*}
+			\frac{\partial y_t}{\partial \varepsilon_t}&=1\\
+			\frac{\partial y_t}{\partial \varepsilon_{t-i}}&=(0.8)^i0.3
+		\end{align*}
+		\begin{figure}[h]
+			\centering
+			\includegraphics{C:/Users/Lucca/GoogleDrive/DOUTORADO_UFPR/Macroeconometria/solution_enders/10d.eps}
+		\end{figure}
+		\
+	\end{enumerate}
+	\pagebreak
+	\item %11
+	$0<\alpha<1$  e $\beta>0$
 	
-	
+	\begin{align*}
+		\text{caso }d>0 \\
+	a_1+a_2<1 \Rightarrow&	\alpha(1+\beta)-\alpha \beta<1\\
+		\therefore \alpha&<1\\
+		\\		
+		a_2<1+a_1 \Rightarrow& -\alpha \beta<1+\alpha(1+\beta)\\
+		& 0<1+\alpha(1+\beta)+\alpha \beta\\
+		\\
+		\text{caso }d=0\\
+		|a_1|=2\Rightarrow& |\alpha (1+\beta)|<2, \alpha<\frac{2}{1+\beta}\\
+		\\
+		\text{caso } d<0\\
+		-a_2<1 \Rightarrow& \alpha \beta <1, \;\;\; \beta<\frac{1}{\alpha}
+	\end{align*}
+		
+		
+		\item %12
+		
+		\begin{enumerate}
+			\item %12a
+				\begin{enumerate}
+					\item %12ai
+					\begin{align*}
+						y_t&=3+0.75y_{t-1}-0.125y_{t-2}+\varepsilon_t\\
+						\Rightarrow & y_t^p=b_0+b_1t+b_2t^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}\;\therefore\\
+						b_0+b_1t+b_2t^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}&=3+0.75\Bigg[b_0+b_1(t-1)+b_2(t-1)^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-1-i}\Bigg]\\
+						&\;\;-0.125\Bigg[b_0+b_1(t-2)+b_2(t-2)^2+\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-2-i}\Bigg]+\varepsilon_t						
+					\end{align*}
+					Tratando a parte determinística da solução particular:
+					\begin{align*}
+							b_0+b_1t+b_2t^2&=3+0.75[b_0+b_1(t-1)+b_2(t-1)^2]-0.125[b_0+b_1(t-2)+b_2(t-2)^2]
+					\end{align*}
+					Como a sequência $\{y_t\}$ não possui raiz unitária, a solução não possui tendência e portanto $b_1=b_2=0$. Então:
+					\begin{align*}
+						b_0&=3+0.75b_0-0.125b_0\\
+						b_0&=8
+					\end{align*}
+					Tratando a parte estocástica da solução particular:
+					\begin{align*}
+						\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}&=0.75\Bigg[\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-1-i}\Bigg]
+						-0.125\Bigg[\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-2-i}\Bigg]+\varepsilon_t\\
+					\Rightarrow \alpha_0&=1\\
+					\alpha_1&=0.75\alpha_0\\
+					\alpha_2&=0.75\alpha_1-0.125\alpha_0\\
+					\alpha_3&=0.75\alpha_2-0.125\alpha_1\\
+					\vdots&\\
+					\alpha_i&=0.75\alpha_{i-1}-0.125\alpha_{i-2}\\
+					\Rightarrow \alpha_i&=A_1(0.5)^i+A_2(0.25)^i\\
+					\alpha_0=1 \Rightarrow&A_1=1-A_2\\
+					\alpha_i&=(1-A_2)(0.5)^i+A_2(0.25)^i\\
+					\alpha_1&=0.75\Rightarrow 0.75=(1-A_2)0.5+A_20.25, \;\;A_2=-1, \;\;A_1=2\\
+					\alpha_i&=2(0.5)^i-(0.25)^i\\
+					\\
+					y_t^p&=8+\sum\limits_{i=0}^{\infty}\bigg[2(0.5)^i-(0.25)^i\bigg]\varepsilon_{t-i}
+				\end{align*}
+					
+				\item %12aii
+				\begin{align*}
+					y_t&=3+0.25y_{t-1}+0.375y_{t-2}+\varepsilon_t\\
+					\\
+					\text{parte determinística:}&\\
+					y_t&=b_0\\
+					\Rightarrow b_0&=3+0.25b_0+0.375b_0\\
+					b_0&=\frac{3}{(0.375)}=8\\
+					\\
+					\text{parte estocástica:}&\\
+					\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-i}&=0.25\Bigg[\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-1-i}\Bigg]+0.375\Bigg[\sum\limits_{i=0}^{\infty}\alpha_i\varepsilon_{t-2-i}\Bigg]+\varepsilon_t\\
+					\alpha_0&=1\\
+					\alpha_1&=0.25\alpha_0\\
+					\alpha_2&=0.25\alpha_1+0.375\alpha_1\\
+					\alpha_3&=0.25\alpha_2+0.375\alpha_2\\
+					\vdots&\\
+					\alpha_i&=0.25\alpha_{i-1}+0.375\alpha_{i-2}\\
+					\end{align*}
+					
+					\begin{align*}
+					\Rightarrow \alpha_i&=A_1(-0.5)^i+A_2(0.75)^i\\
+					\alpha_0&=1 \Rightarrow A_1=1-A_2\\
+					\alpha_i&=(1-A_2)(-0.5)^i+A_2(0.75)^i\\
+					\alpha_1&=0.25 \Rightarrow 0.25=(1-A_2)(-0.5)+A_2(0.75)\\
+					A_2&=0.6,\;\; A_1=0.4\\
+					\\
+					\alpha_i&=0.4(-0.5)^i+0.6(0.75)^i\\
+					\\
+					y_t^p&=8+\sum\limits_{i=0}^{\infty}\Bigg[0.4(-0.5)^i+0.6(0.75)^i\Bigg]\varepsilon_{t-i}
+				\end{align*}			
+				
+				\end{enumerate}
+				
+				\item %12b
+				
+				\begin{enumerate}
+					\item %12bi
+					\begin{align*}
+						y_t^h=A_1(0.5)^t+A_2(0.25)^t
+					\end{align*}
+					
+					\item %12bii
+					\begin{align*}
+						y_t^h=A_1(-0.5)^t+A_2(0.75)^t
+					\end{align*}
+					
+				\end{enumerate}
+				
+				\item %12c
+				\begin{enumerate}
+					\item %12ci
+					\begin{align*}
+					y_t&=A_1(0.5)^t+A_2(0.25)^t+8+\sum\limits_{i=0}^{\infty}\bigg[2(0.5)^i-(0.25)^i\bigg]\varepsilon_{t-i}\\
+					\\
+					y_0=8\Rightarrow8&=A_1+A_2+8,\;\;A_1=-A_2\\
+					y_1=8\Rightarrow 8&=-A_20.5+A_20.25+8,\;\;A_2=0, \;\;A_1=0
+					\end{align*}
+					
+					\item %12cii
+					\begin{align*}
+					y_t&=A_1(-0.5)^t+A_2(0.75)^t+8+\sum\limits_{i=0}^{\infty}\Bigg[0.4(-0.5)^i+0.6(0.75)^i\Bigg]\varepsilon_{t-i}\\
+					y_0=8\Rightarrow 8&=A_1+A_2+8,\;\; A_1=-A_2\\ 
+					y_1=8\Rightarrow 8&=-A_2(-0.5)+A_20.75+8,\;\; A_2=0,\;\;A_1=0
+					\end{align*}
+					
+				\end{enumerate}
+				
+		\end{enumerate}
+		
+	\item %12
+		\begin{enumerate}
+			\item %12a
+			\begin{align*}
+				y_{t-1}&=0.75y_{t-2}+\varepsilon_{t-1}\\
+				&=0.75[0.75y_{t-3}+\varepsilon_{t-2}]+\varepsilon_{t-1}=(0.75)^2y_{t-3}+0.75\varepsilon_{t-2}+\varepsilon_{t-1}\\
+				&=0.75[0.75[0.75y_{t-4}+\varepsilon_{t-3}]+\varepsilon_{t-2}]+\varepsilon_{t-1}=(0.75)^3y_{t-4}+(0.75)^2\varepsilon_{t-3}+0.75\varepsilon_{t-2}+\varepsilon_{t-1}\\
+				y_{t-1}&=(0.75)^{t-1}y_0+(0.75)^{t-2}\varepsilon_1+(0.75)^{t-3}\varepsilon_2+...+(0.75)^2\varepsilon_{t-3}+0.75\varepsilon_{t-2}+\varepsilon_{t-1}\\
+		\end{align*}
+		
+		\item %12b
+		\begin{align*}
+			\alpha_0^ty_0+\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-i}+\varepsilon_t&=0.75\bigg[\alpha_0^{t-1}y_0+\varepsilon_{t-1}+\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-1-i}\bigg]+\varepsilon_{t}\\
+			\\
+			\alpha_0^t&=0.75\alpha_0^{t-1},\;\; \alpha_0=0.75\\
+			\alpha_1&=0.75\\
+			\alpha_2&=0.75\alpha_1\\
+			\alpha_3&=0.75\alpha_2\\
+			\vdots&\\
+			\alpha_i&=0.75\alpha_{i-1}\\
+			\alpha_i&=(0.75)^i,\;\;\; i=1,2,...
+		\end{align*}
+				
+		\item %12c
+		\begin{align*}
+			b_0+b_1t+b_2t^2+\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-i}+\varepsilon_t&=0.75\Bigg[b_0+b_1(t-1)+b_2(t-1)^2+\varepsilon_{t-1}+\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-1-i}\Bigg]\\
+			&\;\;-0.125\Bigg[b_0+b_1(t-2)+b_2(t-2)^2+\varepsilon_{t-2}+\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-2-i}\Bigg]+\varepsilon_t\\
+			\\
+		\end{align*}
+		Tratando a parte determinística da solução particular:
+		\begin{align*}
+			b_0+b_1t+b_2t^2&=3+0.75[b_0+b_1(t-1)+b_2(t-1)^2]-0.125[b_0+b_1(t-2)+b_2(t-2)^2]
+		\end{align*}
+		Como a sequência $\{y_t\}$ não possui raiz unitária, a solução não possui tendência e portanto $b_1=b_2=0$. Então:
+		\begin{align*}
+			b_0&=0.75b_0-0.125b_0\\
+			b_0&=0
+		\end{align*}
+		Tratando a parte estocástica da solução particular:
+		\begin{align*}
+			\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-i}+\varepsilon_t&=0.75\Bigg[\varepsilon_{t-1}+\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-1-i}\Bigg]-0.125\Bigg[\varepsilon_{t-2}+\sum\limits_{i=1}^{\infty}\alpha_i\varepsilon_{t-2-i}\Bigg]+\varepsilon_t\\
+			\Rightarrow \alpha_1&=0.75\\
+			\alpha_2&=0.75\alpha_1-0.125\\
+			\alpha_3&=0.75\alpha_2-0.125\alpha_1\\
+			\vdots&\\
+			\alpha_i&=0.75\alpha_{i-1}-0.125\alpha_{i-2}\\
+			\Rightarrow \alpha_i&=A_1(0.5)^i+A_2(0.25)^i\\
+			\alpha_1=0.75 \Rightarrow&0.75=A_1(0.5)+A_2(0.25)\\
+			A_2&=3-2A_1\\
+			\alpha_i&=(A_1)(0.5)^i+(3-2A_1)(0.25)^i\\
+			\alpha_2=0.4375 \Rightarrow 0.4375&=(A_1)(0.5)^2+(3-2A_1)(0.25)^2\\
+			0.4375&=(A_1)(0.25)+(3-2A_1)(0.0625)\\
+			0.4375&=(A_1)(0.25)+(0.1875-0.125A_1)\\
+			0.25&=0.125A_1, \;\; A_1=2,\;\; A_2=-1\\
+			\\
+			\alpha_i&=2(0.5)^i-(0.25)^i, \;\; i=1,2,...\\
+			\\
+			y_t^p&=\sum\limits_{i=1}^{\infty}\Bigg[2(0.5)^i-(0.25)^i\Bigg]\varepsilon_{t-i}+\varepsilon_t\\
+			\\
+			y_t^*&=B_1(0.5)^t+B_2(0.25)^t+\sum\limits_{i=1}^{\infty}\Bigg[2(0.5)^i-(0.25)^i\Bigg]\varepsilon_{t-i}+\varepsilon_t
+		\end{align*}
+			
+		\end{enumerate}
 \end{enumerate}
 

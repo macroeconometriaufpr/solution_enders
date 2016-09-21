@@ -1,0 +1,75 @@
+\chapter{Modelos de séries de tempo estacionárias}
+
+\begin{enumerate}
+	\item %1
+ $w_t=\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3}$
+	
+		\begin{enumerate}
+			\item %1a
+			\begin{enumerate}
+				\item \begin{align*}E(w_t)&=E(\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3})\\
+				&=\frac{1}{4}E(\varepsilon_{t})+\frac{1}{4}E(\varepsilon_{t-1})+\frac{1}{4}E(\varepsilon_{t-2})+\frac{1}{4}E(\varepsilon_{t-3})=0
+				\end{align*}
+				
+				\item 
+				\begin{align*}E(w_t|\varepsilon_{t-3}=\varepsilon_{t-2}=1)&=E(\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}(1)+\frac{1}{4}(1))\\
+					&=\frac{1}{4}E(\varepsilon_{t})+\frac{1}{4}E(\varepsilon_{t-1})+\frac{1}{4}+\frac{1}{4}=\frac{1}{2}
+				\end{align*}
+			\end{enumerate}
+			\item %1b
+			
+			\begin{enumerate}
+				\item 
+				\begin{align*}
+					\text{var}(w_t)&=E(w_t^2)-E(w_t)^2, \;\;\; E(w_t)=0\\
+					\Rightarrow E(w_t^2)&=E([\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3}]^2)\\
+				&=\frac{1}{16}E(\varepsilon_{t}^2)+\frac{1}{16}E(\varepsilon_{t-1}^2)+\frac{1}{16}E(\varepsilon_{t-2}^2)+\frac{1}{16}E(\varepsilon_{t-3}^2), \;\; \text{pois } E(\varepsilon_{t},\varepsilon_{t-s})=0\; \forall \;s>0\\
+				&=\frac{1}{16}\sigma^2+\frac{1}{16}\sigma^2+\frac{1}{16}\sigma^2+\frac{1}{16}\sigma^2=\frac{1}{4}\sigma^2
+				\end{align*}		
+				\item
+				\begin{align*}
+				\text{var}(w_t|\varepsilon_{t-3}=\varepsilon_{t-2}=1)&=E(w_t^2|\varepsilon_{t-3}=\varepsilon_{t-2}=1)-E(w_t|\varepsilon_{t-3}=\varepsilon_{t-2}=1)^2,\\
+				E(w_t|\varepsilon_{t-3}=\varepsilon_{t-2}=1)&=\frac{1}{2}\\
+				\Rightarrow	\text{var}(w_t|\varepsilon_{t-3}=\varepsilon_{t-2}=1)&=E(w_t^2|\varepsilon_{t-3}=\varepsilon_{t-2}=1)-\frac{1}{4}\\
+				\\
+				E(w_t^2|\varepsilon_{t-3}=\varepsilon_{t-2}=1)&=E([\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{2}]^2)\\
+				&=\frac{1}{16}E(\varepsilon_t^2)+\frac{1}{16}E(\varepsilon_{t-1}^2)+\frac{1}{4}\\
+				&=\frac{1}{4}+\frac{1}{8}\sigma^2\\
+				\text{var}(w_t|\varepsilon_{t-3}=\varepsilon_{t-2}=1)&=\frac{1}{4}+\frac{1}{8}\sigma^2-\frac{1}{4}=\frac{1}{8}\sigma^2
+				\end{align*}		
+			\end{enumerate}
+			
+			\item %1c
+				\begin{enumerate}
+					\item 
+					\begin{align*}
+					\text{cov}(w_t,w_{t-1})&=E(w_tw_{t-1})-E(w_t)E(w_{t-1})\\
+					&=E(w_tw_{t-1}), \text{pois } E(w_{t-s})=0\; \forall\; s\geq0\\
+					E(w_tw_{t-1})&=E[(\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3})(\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3}+\frac{1}{4}\varepsilon_{t-4})]\\
+					&=\frac{3}{16}\sigma^2, \;\;\;\text{pois } E(\varepsilon_{t},\varepsilon_{t-s})=0\; \forall \;s>0
+					\end{align*}
+					
+					\item
+					\begin{align*}
+					\text{cov}(w_t,w_{t-2})&=E(w_tw_{t-2})-E(w_t)E(w_{t-2})\\
+					&=E(w_tw_{t-2})\\
+					E(w_tw_{t-2})&=E[(\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3})(\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3}+\frac{1}{4}\varepsilon_{t-4}+\frac{1}{4}\varepsilon_{t-5})]\\
+					&=\frac{1}{8}\sigma^2
+					\end{align*}
+					
+					\item 
+					\begin{align*}
+						\text{cov}(w_t,w_{t-5})&=E(w_tw_{t-5})-E(w_t)E(w_{t-5})\\
+						&=E(w_tw_{t-5})\\
+						E(w_tw_{t-5})&=E[(\frac{1}{4}\varepsilon_{t}+\frac{1}{4}\varepsilon_{t-1}+\frac{1}{4}\varepsilon_{t-2}+\frac{1}{4}\varepsilon_{t-3})(\frac{1}{4}\varepsilon_{t-5}+\frac{1}{4}\varepsilon_{t-6}+\frac{1}{4}\varepsilon_{t-7}+\frac{1}{4}\varepsilon_{t-8})]\\
+						&=0, \; \text{pois só temos termos de erro \emph{ruído branco}  de períodos diferentes.}
+					\end{align*}
+				\end{enumerate}
+		\end{enumerate}
+		
+		Com este primeiro exercício podemos perceber que a variância condicional é menor do que a não condicional. Intuitivamente faz sentido, já que pelo fato de termos mais informações no exercício condicionado ($\varepsilon_{t-3}=\varepsilon_{t-2}=1$), mais correta será nossa estimativa.
+		
+	------------------------------------	
+		
+		\item %2
+\end{enumerate}

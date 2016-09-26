@@ -1,60 +1,11 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-solution_enders.synctex.gz
-*.log
-solution_enders.idx
+10d-eps-converted-to.pdf
+10d.eps
+5bi-eps-converted-to.pdf
+*.eps
+5bii-eps-converted-to.pdf
+5biv-eps-converted-to.pdf
+5biii-eps-converted-to.pdf
 *.aux
 *.gz
-5biv.eps
-5biii.eps
-*.eps
-10d-eps-converted-to.pdf
-5bii-eps-converted-to.pdf
-5biii-eps-converted-to.pdf
-5bi-eps-converted-to.pdf
-5biv-eps-converted-to.pdf
+*.log
+solution_enders.idx
